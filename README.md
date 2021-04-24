@@ -1,4 +1,4 @@
-# demo_h264_rkmedia
+# RV1126
 
 
 
@@ -23,11 +23,11 @@ config BR2_PACKAGE_DEMO_H264_RKMEDIA
 	select BR2_PACKAGE_ISP2_IPC
 ```
 
-4. 在 buildroot/package/rockchip/demo_h264_rkmedia  添加文件 demo_h264_rkmedia .mk。
+4. 在 buildroot/package/rockchip/demo 添加文件 demo.mk。
 
 ```makefile
-DEMO_H264_RKMEDIA_SITE = $(TOPDIR)/../external/demo_h264_rkmedia
-DEMO_H264_RKMEDIA_SITE_METHOD = local
+DEMO_SITE = $(TOPDIR)/../external/demo
+DEMO_SITE_METHOD = local
 
 DEMO_H264_RKMEDIA_DEPENDENCIES = rkmedia
 
@@ -46,21 +46,21 @@ source "package/rockchip/demo_h264_rkmedia/Config.in"
 BR2_PACKAGE_DEMO_H264_RKMEDIA=y
 ```
 
-6. 在 buildroot 目录执行 `make demo_h264_rkmedia ` 编译程序，最终可执行文件 demo_h264_rkmedia 被安装到 buildroot/output 的目标目录下。
+6. 在 buildroot 目录执行 `make demo ` 编译程序，最终可执行文件 demo 被安装到 buildroot/output 的目标目录下。
 7. 如果在 external/demo_h264_rkmedia 中修改完代码需要重新编译，可执行：
 
 ```shell
 source envsetup.sh
 cd buildroot
-make demo_h264_rkmedia-dirclean
-make demo_h264_rkmedia-rebuild
+make demo-dirclean
+make demo-rebuild
 ```
 
 
 
 ## 运行
 
-demo_h264_rkmedia 最终被安装到系统的 /usr/bin 目录，重新打包根文件系统固件并烧录可在设备运行程序。
+demo最终被安装到系统的 /usr/bin 目录，重新打包根文件系统固件并烧录可在设备运行程序。
 
 也可以直接从 buildroot/output 中将 demo_h264_rkmedia 复制出来，使用 adb 或者其他方法把 demo_h264_rkmedia 放置到设备上。
 
