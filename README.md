@@ -73,13 +73,13 @@ ispserver -no-sync-db &
 在运行程序之前可能需要给 demo_h264_rkmedia 加上可执行权限：
 
 ```shell
-chmod +x demo_h264_rkmedia
+chmod +x demo
 ```
 
 执行程序：
 
 ```shell
-demo_h264_rkmedia
+demo
 ```
 
 按 Ctrl + C 终止程序，之后可以将 /data/output.h264 拉至PC端，如PC端执行：
