@@ -1,13 +1,6 @@
 # RV1126
 
 
-
-## 概述
-
-本程序参考 RV1109/RV1126 SDK 中的 external/rkmedia/examples 代码，演示使用 rkmedia API 做视频编码处理的流程。在 RV1109/RV1126 板子运行此程序，将持续从摄像头获取数据，编码为H.264，并写入文件中；当按下 ctrl+c 时程序终止运行并退出。
-
-
-
 ## 编译
 
 可在 Rockchip RV1109/RV1126 SDK 的 buildroot 编译此程序。
@@ -69,24 +62,4 @@ demo最终被安装到系统的 /usr/bin 目录，重新打包根文件系统固
 ```shell
 ispserver -no-sync-db &
 ```
-
-在运行程序之前可能需要给 demo_h264_rkmedia 加上可执行权限：
-
-```shell
-chmod +x demo
-```
-
-执行程序：
-
-```shell
-demo
-```
-
-按 Ctrl + C 终止程序，之后可以将 /data/output.h264 拉至PC端，如PC端执行：
-
-```shell
-adb pull /data/output.h264  D:\temp
-```
-
-使用电脑上的视频播放器来播放此文件：目前测试可使用QQ播放器，将后缀 `.h264` 改为 `.mp4` 即可播放。
 
