@@ -11,7 +11,7 @@
 
 ```SHELL
 config BR2_PACKAGE_DEMO_H264_RKMEDIA
-	bool "demo_h264_rkmedia: test rkmedia H264 encode"
+	bool ""
 	select BR2_PACKAGE_RKMEDIA
 	select BR2_PACKAGE_ISP2_IPC
 ```
